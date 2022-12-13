@@ -1,0 +1,13 @@
+### get profiles from username 
+GET http://localhost:3000/profiles/foo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJiYXIiLCJlbWFpbCI6ImJhckBiYXIuY29tIiwiaWF0IjoxNjcwOTA1MzY3fQ.E8Hm-yu8qDHvRxUw9LF0h1hwE5nQesRdXqXtya0-4gw
+
+### follow user 
+POST http://localhost:3000/profiles/foo/follow
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJiYXIiLCJlbWFpbCI6ImJhckBiYXIuY29tIiwiaWF0IjoxNjcwOTA1MzY3fQ.E8Hm-yu8qDHvRxUw9LF0h1hwE5nQesRdXqXtya0-4gw
+
+
+### unfollow user 
+DELETE http://localhost:3000/profiles/foo/unfollow
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJiYXIiLCJlbWFpbCI6ImJhckBiYXIuY29tIiwiaWF0IjoxNjcwOTA1MzY3fQ.E8Hm-yu8qDHvRxUw9LF0h1hwE5nQesRdXqXtya0-4gw
+

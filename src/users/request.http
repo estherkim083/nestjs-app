@@ -1,0 +1,38 @@
+### create user test
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "user": {
+        "username": "foo",
+        "email": "foo@bar.com",
+        "password": "123"
+    }
+}
+
+### login user test
+POST http://localhost:3000/users/login
+content-type: application/json
+
+{
+    "user": {
+        "username": "foo",
+        "email": "foo@bar.com",
+        "password": "123"
+    }
+}
+
+### Get current user
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwNzMxOTMzfQ.6ieG_3dt2NUH6j1mmZ4LpD385fSBJy7V_X3cZYBmKFw
+
+### Update current user 
+PUT http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwNzMxOTMzfQ.6ieG_3dt2NUH6j1mmZ4LpD385fSBJy7V_X3cZYBmKFw
+content-type: application/json
+
+{
+    "user": {
+        "bio": "This is my bio"
+    }
+}

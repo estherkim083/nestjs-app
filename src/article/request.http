@@ -1,0 +1,66 @@
+### Post article 
+POST http://localhost:3000/articles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJiYXIiLCJlbWFpbCI6ImJhckBiYXIuY29tIiwiaWF0IjoxNjcwOTA2MTkxfQ.qshvsX0odIyZ4yzclTtHgBy-mDKrmyswdTb6LKxdX5M
+content-type: application/json
+
+{
+    "article": {
+        "title": "This is my title",
+        "description": "This is my description BAR",
+        "body": "This is my body BAR",
+        "tagList" :[ "reactjs", "nestjs"]
+    }
+}
+
+### get one article by slug 
+GET http://localhost:3000/articles/this-is-my-title_1995736268
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### delete one article by slug 
+DELETE http://localhost:3000/articles/this-is-my-title_1995736268
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### update article
+PUT http://localhost:3000/articles/this-is-my-title_1995736268
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+content-type: application/json
+
+{
+    "article": {
+        "title": "This is my title-updated",
+        "description": "This is my description-updated",
+        "body": "This is mybody-updated"
+    }
+}
+
+### find all articles
+GET http://localhost:3000/articles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### feed of all articles
+GET http://localhost:3000/articles/feed
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### query filter pagination
+GET http://localhost:3000/articles?limit=2&offset=0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### query tag
+GET http://localhost:3000/articles?tag=coffee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### query by author username
+GET http://localhost:3000/articles?author=foo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### query by favorited author
+GET http://localhost:3000/articles?favorited=foo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### this-is-my-title_1800731953
+POST http://localhost:3000/articles/this-is-my-title_1800731953/favorite
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
+
+### delete this-is-my-title_1800731953
+DELETE http://localhost:3000/articles/this-is-my-title_1800731953/favorite
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmb28iLCJlbWFpbCI6ImZvb0BiYXIuY29tIiwiaWF0IjoxNjcwOTA2MjUzfQ.3WW8tMU8t5hifsQj30M4gxN8cyCpW2sC2UHAbAKuSrw
